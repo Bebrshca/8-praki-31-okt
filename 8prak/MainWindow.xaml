@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_8prak"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Воины" Height="480" Width="820">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Button Content="Лёгкий воин" Padding="10,5" Margin="3" Click="BtnAddLight_Click"/>
+            <Button Content="Тяжёлый воин" Padding="10,5" Margin="3" Click="BtnAddHeavy_Click"/>
+            <Button Content="Нанести урон" Padding="10,5" Margin="3" Click="BtnDamage_Click"/>
+            <Button Content="Сброс" Padding="10,5" Margin="3" Click="BtnReset_Click"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Canvas x:Name="Battlefield" Background="#FFF0F0F0" Width="760" Height="330"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ListBox x:Name="Log" Grid.Column="1" FontSize="12"/>
+        </Grid>
     </Grid>
 </Window>
